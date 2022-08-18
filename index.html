@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+  </style>
+</head>
+
+<body class="bg-black">
+
+  <div class="bg-white w-4/5 mx-auto mt-20 rounded-xl p-5">
+    <input type="text" class="border-4 rounded-xl mt-7 p-2 w-full" placeholder="English" id="English" default-value="0"> <br>
+    <input type="text" class="border-4 rounded-xl mt-7 p-2 w-full" placeholder="Math" id="Math"> <br>
+    <input type="text" class="border-4 rounded-xl mt-7 p-2 w-full" placeholder="Science" id="Science"> <br>
+    <input type="text" class="border-4 rounded-xl mt-7 p-2 w-full" placeholder="Sst" id="Sst"> <br><br>
+    <button class="border rounded bg-green-700 text-white p-3 m-5 pointer" onclick="myFunction()">Click Me</button>
+  </div>
+
+  <script>
+
+    function myFunction(){
+      let English = document.querySelector('#English').value;
+      let Math = document.querySelector('#Math').value;
+      let Science = document.querySelector('#Science').value;
+      let Sst = document.querySelector('#Sst').value;
+
+      let totals = parseFloat(English) + parseFloat(Math) + parseFloat(Science) + parseFloat(Sst);
+      alert(totals);
+
+      const percentage = totals / 4;
+      alert(percentage + '%');
+
+      let division;
+      
+
+      if(percentage <= 100 && percentage >= 80){
+        division = 'a';
+        alert(division);
+      }if(percentage <= 79 && percentage >= 60){
+        division = 'b';
+        alert(division);
+      }if(percentage <= 59 && percentage >= 40){
+        division = 'd';
+        alert(division);
+      }if(percentage <= 39 && percentage >= 1){
+        division = 'failed';
+        alert(division);
+      }else {
+        division = 'please input valid no';
+        alert(division);
+      }
+
+    }
+
+
+    
+    // let kouWeight = 50;
+    // let kouHeight = 1.5;
+    // let hsninWeight = 50;
+    // let hsninHeight = 1.4;
+
+    // let kouBMI = kouWeight / kouHeight ** 2;
+    // let hsnBMI = hsninWeight / (hsninHeight * hsninHeight);
+
+
+    // if(kouBMI > hsnBMI){
+    //   console.log(`kousain bmi ${kouBMI} is more than hasnain bmi ${hsnBMI}`)
+    // }else{
+    //   console.log(`hasnain bmi ${kouBMI} is more than ko kousain bmi ${hsnBMI}`)
+    // };
+
+    // let year = "1999";
+    // if(year === 999){
+    //   console.log(typeof year);
+    // }
+    // let  dolphinsScore = (97 + 112 + 1225) / 3;
+    // let koalasScore = (109 + 91 + 123) / 3
+
+    // console.log(dolphinsScore, koalasScore);
+
+    // if(dolphinsScore > koalasScore && dolphinsScore >= 100){
+    //   console.log(`dolphins score is ${dolphinsScore} is more than koalas score ${koalasScore}`);
+    // }else if(koalasScore > dolphinsScore && koalasScore >= 100){
+    //   console.log(`koalas score is ${koalasScore} is more than dolphins score ${dolphinsScore}`);
+    // }else {
+    //   console.log('both score is less no one is winner');
+    // }
+
+    // function cutFruitPieces (fruit) {
+    //   return fruit * 4;
+    // }
+
+    // function fruitProcessor (apples, oranges){
+    //     const applesPiece = cutFruitPieces(apples);
+    //     const orangesPiece = cutFruitPieces(oranges);
+
+
+    //     const juice = `i would like to drink ${applesPiece} apples piece juice and ${orangesPiece} oranges`;
+    //     return juice;
+    // }
+
+    // console.log(fruitProcessor(4,6));
+    // const calcaGe = (age) => {
+    //     return age - 2022;
+    // };
+
+    // const bioGraphy = (birthday, firstName) => {
+    //     const ages = calcaGe(birthday);
+    //     const fullName = calcaGe(firstName);
+
+    //     const fullNames = `my Name is ${fullName} & i am ${ages} years old`;
+    //     return fullNames;
+    // };
+
+    // console.log(bioGraphy(1999, 'Shoiab alam'));
+    // let calcaGe = (x ,y , z) => (x + y + z) / 3;
+
+    // let dolphinsScore = calcaGe(44, 23,71);
+    // let koalasScore = calcaGe(65 ,54, 49);
+    // // console.log(dolphinsScore, koalasScore);
+
+    // let checkWinner = (dolphinsVerge, koalasVerage) => {
+    //    if(dolphinsVerge >= 2 * koalasScore){
+    //     console.log(`dolphins averge is ${dolphinsVerge} is more than ${koalasVerage}`);
+    //    }else if(koalasVerage >= 2 * dolphinsVerge){
+    //     console.log(`koalas averge is ${koalasVerage} is more than ${dolphinsVerge}`);
+    //    }else{
+    //     console.log(`average of dolphins ${dolphinsVerge} & koalas average ${koalasVerage} so no any one is winner.`);
+    //    }
+    // };
+
+    // console.log(checkWinner(dolphinsScore, koalasScore));
+    // console.log(checkWinner(576, 111));
+
+
+    // dolphinsScore = calcaGe(85, 54, 41);
+    // koalasScore = calcaGe(23, 34,30
+    // );
+    // console.log(dolphinsScore, koalasScore);
+    // console.log(checkWinner(dolphinsScore, koalasScore));
+
+    // const calcTips = (bill) => {
+    //   return bill >= 50 && bill <= 300? bill * 0.15: bill * 0.20;
+    // }
+
+    // const bills = [145, 180, 55];
+    // const tips = [calcTips(bills[0]), calcTips(bills[1]), calcTips(bills[2])];
+    // const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+    // console.log(`bills ${bills}
+
+    // tips ${tips}
+
+    // totals ${totals}`);
+
+
+
+    //
+
+    // let rep = 'i did complete reps!';
+    // console.log(rep);
+    // const Shoiab = [
+    //   'Shoiab','alam', 2022-1999,true
+    // ];
+    // let tips = [];ss
+
+
+    // document.querySelector('button').textContent = 'BUTTON';
+    // function myFunction () {
+    //     document.querySelector('button').style.background = 'red';
+    //     document.querySelector('button').textContent = 'button';
+
+    // }
+
+    // const myFunction1 = () => document.querySelector('button').style.background = 'green';
+
+
+    // for(let i = 0;i < Shoiab.length;i++){
+    //   // console.log(typeof Shoiab[i], Shoiab[i]);
+    //   tips.push(console.log(Shoiab[i]));
+    // }
+
+    // let years = [1999, 2000, 2001, 2002];
+    // let ages = [];
+
+    // for(let i = 0;i < years.length; i++){
+    //   ages.push(2022 - years[i]);
+
+    // };
+    // console.log(ages);    
+    // 0
+
+    // const calcTemplitude = function(temps) {
+    // let min = temps[0];
+    // for(let i = 0;i < temps.length;i++){
+    //     if(temps[i] > min) min = temps[i];
+    // }
+    // console.log(min);
+    // };
+    // calcTemplitude([50,10,40]);
+
+    // const array = [10,20,30,40,50, 'error'];
+    // console.log(array);
+
+    // function myFunction(temps){
+    //   let max = temps[0];
+    //   let min = temps[0];
+    //   for(let i = 0;i < temps.length;i++){
+    //     // const curTemp = temps[i];
+    //     // if(typeof curTemp !== 'number') continue;
+    //     if(temps[i] > max)max = temps[i];
+    //     if(temps[i] < min )min = temps[i];
+    //   }
+    //   console.log(max,
+    //   min);
+    // }
+    // myFunction(array);
+    // const jonas = {
+    //   firstName: 'Shoiab alam',
+    //   year: 1999,
+
+
+    //   calcGe: function (recent) {
+    //     console.log(this);
+    //     console.log(recent - this.year);
+    //     const self = this;
+
+    //     const greet = () => {
+    //       console.log(self);
+    //       console.log(self.firstName);
+    //     }
+    //     greet();
+    //   },
+
+    // }
+
+    // jonas.calcGe(2022);
+
+    // const dd = [10,20,30,40,50,60,70,80];
+    // console.log(dd.sort());
+    // console.log(dd.slice(3, -4));
+
+    // let age = 23;
+    // let oldage = 22;
+    // console.log(`current age is ${age} & old age is ${oldage}`);
+  
+      // const me = {
+      //   name : 'Shoiab',
+      //   age : 23,
+      // };
+      // const friends = me;
+      // friends.age = 27;
+      // friends.name = 'alam';
+
+
+      // console.log(friends.name, friends.age);
+  
+// const firstName = {
+//   fName : 'Shoiab',
+//   lName : 'alam',
+//   age: 23,
+// };
+
+// const newName = Object.assign({}, firstName);
+// newName.lName = 'ansari';
+// console.log('Before Marriage', firstName);
+// console.log('after Marriage', newName);
+
+
+const restaurant = {
+
+  starterMenu : ['Samoasa', 'bread pakoda', 'Pepsi'],
+  mainMenu: ['Biryani', 'korma', 'nihari'],
+
+  order : function(starterIndex, mainIndex){
+      return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  day : [
+    fri = {
+      open: '10:00',
+      close: '11:00',
+    },
+    sat = {
+      open: '10:00',
+      close: '11:00',
+    },
+    sun = {
+      open: '10:00',
+      close: '11:00',
+    },
+  
+
+  ],
+
+  orderDelivery : function({orderDeliveryTime, address, phoneNo, starterIndex, mainIndex}){
+      console.log(`the time of delivery ${orderDeliveryTime} at the address ${address} & phone no is ${phoneNo},  & your item ${this.starterMenu[starterIndex]} & ${this.mainMenu[mainIndex]}..`);
+  },
+
+  orderPasta : function(ing1, ing2, ing3){
+    console.log(`here is your delicious pasta ${ing1} ${ing2} ${ing3}`)
+  },
+
+  orderPizza: function(mainIngredients, ...otherIngredients){
+      console.log(mainIngredients,
+      otherIngredients);
+  }
+};
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for(const item of menu)
+    console.log(item);
+
+    for(const item of menu.entries()){
+    console.log(`${item[0] + 1}: ${item}`);
+  }
+
+    // console.log([...menu.entries()]);
+
+
+
+// const rest1 = {
+//   name : 'Capri',
+//   numGuests: 20,
+// };
+
+// const rest2 = {
+//   name: 'La Piazza',
+//   owner: 'Giovanni Rossi',
+// }
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// console.log(rest1,
+// rest2)
+
+
+// const game = {
+//   team1: 'Bayren Mynicin',
+//   team2: 'Bourussia Dortmund',
+//   players : [
+//     ['Shoiab','Kousain','Hasnain','Kamran','Faizan','Salman','azan','Worka','amaan','Shazan','Shehzad'],
+//     ['Shehzad','Danish','Tafseer','Faizan','afjal','Zaved','Farhat','Fatima','Falak','Imam','Frazul'],
+
+//   ],
+//   score: '4:0',
+//   scored: ['Salman','Faizan','amaan','Hasnain'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   }
+// };
+
+// //1 
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
+
+// //2
+// const [gk, ...fieldPlayer] = players1;
+// console.log(gk, fieldPlayer);
+
+// //3
+// const finalPlayers1 = [...players1,'Shoiab','Hasnain','Kouasain'];
+// console.log(finalPlayers1);
+// //4
+// const totalPlayers = [players1, players2];
+// console.log(...totalPlayers);
+
+// //5 
+// const {odds: team1, x, team2} = game;
+// console.log(team1, x, team2);
+
+// //6 
+// const printGoals = function(...players){
+//     console.log(`${players.length} were goals scored`);
+// }
+// printGoals(...game.scored);
+
+// //7
+// game.team2 = 12;
+// team1 < team2 && console.log('team 1 is more likely to win');
+// team1 > team2 && console.log('team 2 is more likely to win');
+
+
+
+// // 1111111111111111111
+// const [players1, players2] = game.players;
+// console.log(players1,
+// players2);
+
+// // 222222222222222222
+// const [goalKeeper, ...fieldPlayer] = players1;
+// console.log(goalKeeper, fieldPlayer);
+
+// // 33333333333
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+
+// //4444444
+// const playersFinal = [...players1, 'Thiago', 'Coutinho','Perisic'];
+// console.log(playersFinal);
+
+
+// //555555
+// const {odds: team1, x: draw, team2} = game;
+// console.log(team1,
+// draw,
+// team2);
+
+// //6666
+// const printGoals  = function(...players){
+//   console.log(`${players.length} goals were scored`);
+// }
+
+// printGoals(...game.scored);
+
+// //
+// team1 < team2 && console.log(`team 1 is more likely to win`);
+// team2 < team1 && console.log('team 2 is more likely to win');
+
+// console.log(3 || 'Jonas');
+// console.log(' ' || 'Jonas');
+// console.log(0 || true);
+// console.log(undefined || null);
+
+// console.log(undefined || 0 || '' ||'Hello' || 23 || null);
+
+
+
+// const guest1 = restaurant.numGuest1 || 10;
+// console.log(guest1);
+
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+
+// restaurant.orderPizza && restaurant.orderPizza('red','momos','what else','peps');
+
+
+
+// restaurant.orderPizza('mushroom','Garlic Bread','Chocolate Shake','Oreo Shake')
+
+// const [Samoasa, ,Pepsi, ...otherFoods] = [...restaurant.starterMenu, ...restaurant.mainMenu];
+//   console.log(Samoasa, Pepsi,otherFoods);
+
+
+//   const add = function(...d) {
+//     let sum = 0;
+//     for(let i = 0;i < d.length;i++){
+//       sum += d[i];
+//       console.log(sum);
+//     }
+//   };
+
+//   add(2, 3);
+//   add(5, 3, 7, 2);
+//   add(8, 2, 5, 3, 2, 1 ,4);
+
+//   const x = [23, 5, 7];
+//  x.push(add);
+
+//   console.log(x);
+
+
+// const ingredients = [
+//   prompt(`let,s make pasta`),
+//   prompt(`let,s make Biryani`),
+//   prompt(`let,s make korma`)
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// restaurant.orderDelivery({
+//   orderDeliveryTime: 'with in 10 min',
+//   address: 'h: 499 sardar Mohalla TKD Village New Delhi',
+//   phoneNo: '9953195916',
+//   starterIndex: 2,
+//   mainIndex: 0,
+// });
+
+// const newRestaurant = {foundedIn: 1998,...restaurant, founder: 'India'};
+// console.log(newRestaurant);
+// const {starterMenu: s, mainMenu: m, day} = restaurant;
+// console.log(s, m, day);
+
+// console.log(restaurant.order(1, 0));
+
+// let nested = [1, 2, [3, 4]];
+// const [d, , s] = nested;
+// console.log(d, 
+// s);
+
+// let array = [1,2,3,4,5];
+// let newarray = [...array,6,7,8];
+// console.log(...newarray);
+
+// const newmenu = [...restaurant.mainMenu ,'apple','mango','orange'];
+// console.log(...newmenu);
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// const menu = [...restaurant.starterMenu ,...restaurant.mainMenu];
+// console.log(menu);
+
+// const str = 'Jonas';
+// const letter = [...str, ' ', '&'];
+// console.log(letter);
+
+
+
+  </script>
+</body>
+
+</html>
